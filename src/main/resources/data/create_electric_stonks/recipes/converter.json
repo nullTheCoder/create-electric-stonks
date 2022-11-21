@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ici",
+    "isi",
+    "ici"
+  ],
+  "key": {
+    "c": {
+      "item": "create_electric_stonks:redstone_resonance_coil"
+    },
+    "s": {
+      "item": "create:shaft"
+    },
+    "i": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result": {
+    "item": "create_electric_stonks:converter"
+  }
+}
