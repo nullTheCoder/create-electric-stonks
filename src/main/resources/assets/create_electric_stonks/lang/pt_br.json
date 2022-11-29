@@ -1,0 +1,52 @@
+{
+    "itemGroup.create_electric_stonks:create_electric_stonks_tab": "Criar guia de eletricidade",
+    "block.create_electric_stonks.generator": "Gerador de Ressonância Redstone",
+    "block.create_electric_stonks.weak_generator": "Gerador de ressonância de redstone fraco",
+    "block.create_electric_stonks.reinforced_generator": "Gerador de Ressonância Redstone Reforçado",
+    "block.create_electric_stonks.converter": "Conversor de ressonância Redstone",
+    "block.create_electric_stonks.motor": "Motor",
+    "block.create_electric_stonks.weak_motor": "Motor Fraco",
+    "block.create_electric_stonks.reinforced_motor": "Motor Reforçado",
+    "block.create_electric_stonks.heavy_motor": "Motor Pesado",
+    "block.create_electric_stonks.reinforced_heavy_motor": "Motor Pesado Reforçado",
+    "block.create_electric_stonks.swift_motor": "Motor Swift",
+    "block.create_electric_stonks.ultimate_motor": "Advanced Motor",
+    "block.create_electric_stonks.energy_relaying_pole": "Poste de Retransmissão de Energia",
+  
+    "create_electric_stonks.redstone_field_strength": " §3força de ressonância",
+    "create_electric_stonks.generatedfe": "fe/t §3da ressonância redstone",
+    "create_electric_stonks.efficiency": "% §3eficiência de ressonância",
+    "create_electric_stonks.energy_stored": "%dFE§3/§r%dFE §3armazenado",
+    "create_electric_stonks.usage": "§3usando §r%dfe/t",
+    "create_electric_stonks.stress_multiplier": "Força",
+  
+    "block.create_electric_stonks.resonance_coil_block": "Bloco de Bobina de Ressonância",
+    "block.create_electric_stonks.resonating_block": "Bloco Ressonante",
+  
+  
+    "item.create_electric_stonks.redstone_resonance_coil": "Bobina de Ressonância Redstone",
+    "item.create_electric_stonks.advanced_redstone_resonance_coil": "Bobina de ressonância Redstone avançada",
+  
+    "create_electric_stonks.ponder.motor.header": "Gerando força rotacional usando um motor",
+    "create_electric_stonks.ponder.motor.text_1": "Os motores permitem gerar força rotacional a partir da eletricidade.",
+    "create_electric_stonks.ponder.motor.text_2": "Quando alimentado com eletricidade irá gerar rotação. A quantidade de eletricidade consumida é baseada na velocidade e potência do motor.",
+    "create_electric_stonks.ponder.motor.text_3": "Você pode alterar sua velocidade rolando em seu painel traseiro!",
+    "create_electric_stonks.ponder.motor.text_4": "Ao alimentá-lo com redstone, você pode desativá-lo.",
+    "create_electric_stonks.ponder.motor.text_5": "Você também pode inverter essa mecânica clicando nela com uma chave enquanto se esgueira.",
+  
+    "create_electric_stonks.ponder.energy_relaying_pole.header": "Usando pólos de retransmissão de energia",
+    "create_electric_stonks.ponder.energy_relaying_pole.text_1": "Os pólos de retransmissão de energia são usados para retransmitir energia entre dois pontos, ao contrário dos fios convencionais, eles só podem ser usados para encaminhar a energia para frente. Coloque-o com o lado longo e curto em direção à fonte de energia e ele alimentará qualquer bloco localizado do outro lado...",
+    "create_electric_stonks.ponder.energy_relaying_pole.text_2": "... incluindo eles mesmos.",
+  
+    "create_electric_stonks.ponder.generating_electricity.header": "Gerando eletricidade",
+    "create_electric_stonks.ponder.generating_electricity.text_1": "Este é um bloco gerador de campo redstone, ele gera um 'campo redstone' em torno de si que pode 'ressonar' com alguns blocos.",
+    "create_electric_stonks.ponder.generating_electricity.text_2": "Quando cercado por certos blocos, ele criará 'ressonância de redstone', blocos diferentes fornecem eficiência de ressonância diferente.",
+    "create_electric_stonks.ponder.generating_electricity.text_3": "20%% eficiência",
+    "create_electric_stonks.ponder.generating_electricity.text_4": "34%% eficiência",
+    "create_electric_stonks.ponder.generating_electricity.text_5": "14%% eficiência",
+    "create_electric_stonks.ponder.generating_electricity.text_6": "5%% eficiência",
+    "create_electric_stonks.ponder.generating_electricity.text_7": "Você também pode incompatibilidade de blocos, o que forneceria a eficiência média entre esses blocos.",
+    "create_electric_stonks.ponder.generating_electricity.text_8": "Para converter a força da 'ressonância redstone' em FE, você precisa colocar um conversor perto do gerador de ressonância.",
+    "create_electric_stonks.ponder.generating_electricity.text_9": "Você pode então usar a eletricidade que você faz.",
+    "create_electric_stonks.ponder.generating_electricity.text_10": "Você pode expandir o gerador tanto quanto seu estresse cinético permitir!\""
+}
