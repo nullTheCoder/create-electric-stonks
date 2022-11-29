@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "create_electric_stonks:converter",
+    "create_electric_stonks:energy_relaying_pole",
+    "create_electric_stonks:generator",
+    "create_electric_stonks:motor",
+    "create_electric_stonks:reinforced_generator",
+    "create_electric_stonks:reinforced_heavy_motor",
+    "create_electric_stonks:reinforced_motor",
+    "create_electric_stonks:resonance_coil_block",
+    "create_electric_stonks:resonating_block",
+    "create_electric_stonks:swift_motor",
+    "create_electric_stonks:weak_generator",
+    "create_electric_stonks:weak_motor"
+  ]
+}
