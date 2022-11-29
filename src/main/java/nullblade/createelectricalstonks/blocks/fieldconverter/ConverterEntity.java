@@ -5,8 +5,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextComponent;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
@@ -53,7 +51,7 @@ public class ConverterEntity extends KineticTileEntity {
 
     @Override
     public boolean addToGoggleTooltip(List<Component> tooltip, boolean isPlayerSneaking) {
-        tooltip.add(new TextComponent(spacing).append(String.valueOf(generated)).append(new TranslatableComponent(CreateElectricStonks.id + ".generatedfe")));
+        tooltip.add(Component.literal(spacing).append(String.valueOf(generated)).append(Component.translatable(CreateElectricStonks.id + ".generatedfe")));
         super.addToGoggleTooltip(tooltip, isPlayerSneaking);
         return true;
     }

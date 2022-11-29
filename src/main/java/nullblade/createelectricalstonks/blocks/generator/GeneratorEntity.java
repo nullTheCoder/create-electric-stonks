@@ -4,8 +4,6 @@ import com.simibubi.create.content.contraptions.base.KineticTileEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextComponent;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import nullblade.createelectricalstonks.Config;
@@ -46,9 +44,9 @@ public class GeneratorEntity extends KineticTileEntity {
 
     @Override
     public boolean addToGoggleTooltip(List<Component> tooltip, boolean isPlayerSneaking) {
-        tooltip.add(new TextComponent(spacing).append(String.valueOf(generated)).append(new TranslatableComponent(CreateElectricStonks.id + ".redstone_field_strength")));
-        tooltip.add(new TextComponent(spacing).append(String.valueOf((int) (efficiency * 100))).append(new TranslatableComponent(CreateElectricStonks.id + ".efficiency")));
-        tooltip.add(new TextComponent(""));
+        tooltip.add(Component.literal(spacing).append(String.valueOf(generated)).append(Component.translatable(CreateElectricStonks.id + ".redstone_field_strength")));
+        tooltip.add(Component.literal(spacing).append(String.valueOf((int) (efficiency * 100))).append(Component.translatable(CreateElectricStonks.id + ".efficiency")));
+        tooltip.add(Component.literal(""));
         super.addToGoggleTooltip(tooltip, isPlayerSneaking);
         return true;
     }

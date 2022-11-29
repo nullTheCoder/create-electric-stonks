@@ -1,7 +1,6 @@
 package nullblade.createelectricalstonks;
 
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
@@ -37,7 +36,7 @@ public class GenerationBlocksRegistry {
     public static void add(Block block, float efficiency) {
         blockEfficiencies.put(block, efficiency);
         blockToolTips.put(block.getDescriptionId(),
-                new TextComponent("§3Redstone resonance efficiency: §r" + (int) (efficiency * 100) + "%")
+                Component.translatable("§3Redstone resonance efficiency: §r" + (int) (efficiency * 100) + "%")
         );
     }
 

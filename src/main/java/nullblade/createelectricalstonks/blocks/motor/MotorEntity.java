@@ -9,8 +9,8 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextComponent;
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.network.chat.ComponentUtils;
+import net.minecraft.network.chat.contents.TranslatableContents;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
@@ -132,9 +132,9 @@ public class MotorEntity extends GeneratingKineticTileEntity {
 
     @Override
     public boolean addToGoggleTooltip(List<Component> tooltip, boolean isPlayerSneaking) {
-        tooltip.add(new TextComponent(spacing).append(new TranslatableComponent(CreateElectricStonks.id + ".energy_stored", energyStorage.getEnergyStored(), energyStorage.getMaxEnergyStored())));
-        tooltip.add(new TextComponent(spacing).append(new TranslatableComponent(CreateElectricStonks.id + ".usage", (int) (Math.abs(actualSpeed) * (stressImpact()) * Config.fEPerRotation))));
-        tooltip.add(new TextComponent(""));
+        tooltip.add(Component.literal(spacing).append(Component.translatable(CreateElectricStonks.id + ".energy_stored", energyStorage.getEnergyStored(), energyStorage.getMaxEnergyStored())));
+        tooltip.add(Component.literal(spacing).append(Component.translatable(CreateElectricStonks.id + ".usage", (int) (Math.abs(actualSpeed) * (stressImpact()) * Config.fEPerRotation))));
+        tooltip.add(Component.literal(""));
 
         super.addToGoggleTooltip(tooltip, isPlayerSneaking);
         return true;
