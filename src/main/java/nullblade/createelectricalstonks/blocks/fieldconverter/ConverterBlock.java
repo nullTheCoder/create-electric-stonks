@@ -25,7 +25,6 @@ public class ConverterBlock extends DirectionalKineticBlock implements ITE<Conve
     public ConverterBlock(Properties arg) {
         super(arg.noOcclusion());
     }
-
     public VoxelShape getShape(BlockState arg, BlockGetter arg2, BlockPos arg3, CollisionContext arg4) {
         return switch ((arg.getValue(FACING)).getAxis()) {
             case X -> X_AXIS_AABB;
