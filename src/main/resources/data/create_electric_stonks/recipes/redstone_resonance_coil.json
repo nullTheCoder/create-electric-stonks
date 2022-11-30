@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "iri",
+    "r r",
+    "iri"
+  ],
+  "key": {
+    "r": {
+      "item": "minecraft:redstone"
+    },
+    "i": {
+      "item": "minecraft:copper_ingot"
+    }
+  },
+  "result": {
+    "item": "create_electric_stonks:redstone_resonance_coil"
+  }
+}

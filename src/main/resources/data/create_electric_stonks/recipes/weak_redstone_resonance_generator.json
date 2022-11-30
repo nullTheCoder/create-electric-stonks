@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "gcg",
+    "asa",
+    "gcg"
+  ],
+  "key": {
+    "c": {
+      "item": "create_electric_stonks:redstone_resonance_coil"
+    },
+    "g": {
+      "item": "minecraft:gold_ingot"
+    },
+    "a": {
+      "item": "create:andesite_alloy"
+    },
+    "s": {
+      "item": "create:shaft"
+    }
+  },
+  "result": {
+    "item": "create_electric_stonks:weak_generator"
+  }
+}

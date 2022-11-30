@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ifi",
+    " f ",
+    "ifi"
+  ],
+  "key": {
+    "i": {
+      "item": "minecraft:copper_ingot"
+    },
+    "f": {
+      "tag": "forge:fences/wooden"
+    }
+  },
+  "result": {
+    "item": "create_electric_stonks:energy_relaying_pole"
+  }
+}
