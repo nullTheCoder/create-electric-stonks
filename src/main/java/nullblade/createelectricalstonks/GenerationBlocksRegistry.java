@@ -18,17 +18,20 @@ public class GenerationBlocksRegistry {
         blockToolTips = new HashMap<>();
 
         add(Blocks.REDSTONE_BLOCK, 0.05f);
-        add(Blocks.LAPIS_BLOCK, 0.08f);
+        add(Blocks.LAPIS_BLOCK, 0.1f);
         add(Blocks.COPPER_BLOCK, 0.15f);
         add(Blocks.WAXED_COPPER_BLOCK, 0.15f);
-        add(Blocks.IRON_BLOCK, 0.20f);
         add(Blocks.OBSIDIAN, 0.20f);
+        add(Blocks.END_STONE, 0.20f);
+        add(Blocks.BRICKS, 0.20f);
+        add(Blocks.IRON_BLOCK, 0.30f);
         add(Blocks.EMERALD_BLOCK, 0.26f);
-        add(Blocks.GOLD_BLOCK, 0.25f);
-        add(Blocks.DIAMOND_BLOCK, 0.35f);
-        add(ModBlocks.RESONANCE_COIL_BLOCK.get(), 0.4f);
-        add(ModBlocks.RESONATING_BLOCK.get(), 0.85f);
-        add(Blocks.NETHERITE_BLOCK, 0.90f);
+        add(Blocks.CRYING_OBSIDIAN, 0.30f);
+        add(Blocks.GOLD_BLOCK, 0.40f);
+        add(ModBlocks.RESONANCE_COIL_BLOCK.get(), 0.5f);
+        add(Blocks.DIAMOND_BLOCK, 0.6f);
+        add(ModBlocks.RESONATING_BLOCK.get(), 0.9f);
+        add(Blocks.NETHERITE_BLOCK, 0.95f);
 
 
     }

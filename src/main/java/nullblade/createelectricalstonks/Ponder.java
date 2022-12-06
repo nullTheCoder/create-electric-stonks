@@ -83,13 +83,13 @@ public class Ponder {
         scene.idle(50);
 
         scene.overlay.showText(70)
-                .text("You can also inverse that mechanic by clicking it with a wrench while sneaking.")
+                .text("You can also inverse that mechanic by clicking it with a wrench.")
                 .placeNearTarget()
                 .pointAt(util.vector.of(2.5, 3.2, 2.5));
 
         scene.idle(5);
 
-        scene.overlay.showControls(new InputWindowElement(util.vector.of(2.5, 2.5, 2.5), Pointing.DOWN).withWrench().whileSneaking(), 70);
+        scene.overlay.showControls(new InputWindowElement(util.vector.of(2.5, 2.5, 2.5), Pointing.DOWN).withWrench(), 70);
 
         scene.idle(5);
 
