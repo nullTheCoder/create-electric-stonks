@@ -32,7 +32,7 @@
   "create_electric_stonks.ponder.motor.text_2": "When powered with electricity it will generate rotation. The amount of electricity consumed is based on the speed and power of the motor.",
   "create_electric_stonks.ponder.motor.text_3": "You can change it's speed by scrolling on it's back panel!",
   "create_electric_stonks.ponder.motor.text_4": "By powering it with redstone you can disable it.",
-  "create_electric_stonks.ponder.motor.text_5": "You can also inverse that mechanic by clicking it with a wrench while sneaking.",
+  "create_electric_stonks.ponder.motor.text_5": "You can also inverse that mechanic by clicking it with a wrench.",
 
   "create_electric_stonks.ponder.energy_relaying_pole.header": "Using Energy relaying poles",
   "create_electric_stonks.ponder.energy_relaying_pole.text_1": "Energy Relaying poles are used to relay energy between two points, unlike conventional wires they can only be used forward the energy forward. Place it long short side towards the source of energy and it will power whatever block is located on the other side...",

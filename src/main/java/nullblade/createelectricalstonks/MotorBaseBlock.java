@@ -4,7 +4,10 @@ import com.simibubi.create.content.contraptions.base.DirectionalKineticBlock;
 import com.simibubi.create.content.contraptions.base.IRotate;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.BlockGetter;
@@ -58,6 +61,26 @@ public class MotorBaseBlock extends DirectionalKineticBlock implements IRotate {
 
     @Override
     public InteractionResult onSneakWrenched(BlockState state, UseOnContext context) {
+        Level world = context.getLevel();
+        BlockPos pos = context.getClickedPos();
+        Player player = context.getPlayer();
+        if (world instanceof ServerLevel) {
+            if (player != null && !player.isCreative()) {
+                Block.getDrops(state, (ServerLevel)world, pos, world.getBlockEntity(pos), player, context.getItemInHand()).forEach((itemStack) -> {
+                    player.getInventory().placeItemBackInInventory(itemStack);
+                });
+            }
+
+            state.spawnAfterBreak((ServerLevel)world, pos, ItemStack.EMPTY);
+            world.destroyBlock(pos, false);
+            this.playRemoveSound(world, pos);
+        }
+
+        return InteractionResult.SUCCESS;
+    }
+
+    @Override
+    public InteractionResult onWrenched(BlockState state, UseOnContext context) {
         if (state.hasBlockEntity()) {
             BlockEntity entity = context.getLevel().getBlockEntity(context.getClickedPos());
             if (entity instanceof MotorEntity en) {
