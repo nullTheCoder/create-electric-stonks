@@ -71,6 +71,7 @@ public class CreateElectricStonks {
 
         CraftingItems.init();
         ModBlocks.init();
+        GenerationBlocksRegistry.init();
         Create.registrate().addToSection(GENERATOR, AllSections.KINETICS);
         Create.registrate().addToSection(MOTOR, AllSections.KINETICS);
         Create.registrate().addToSection(CONVERTER, AllSections.KINETICS);
@@ -98,7 +99,6 @@ public class CreateElectricStonks {
             HELPER.addStoryBoard(WEAK_GENERATOR, "generating_electricity", Ponder::generatingElectricity, PonderTag.KINETIC_APPLIANCES);
             HELPER.addStoryBoard(REINFORCED_GENERATOR, "generating_electricity", Ponder::generatingElectricity, PonderTag.KINETIC_APPLIANCES);
 
-            GenerationBlocksRegistry.init();
         });
         ItemBlockRenderTypes.setRenderLayer(GENERATOR.get(), RenderType.translucent());
     }
