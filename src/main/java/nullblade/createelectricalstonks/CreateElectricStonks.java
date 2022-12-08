@@ -18,6 +18,7 @@ import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import nullblade.createelectricalstonks.blocks.energyrelayingpole.EnergyRelayingPoleBlock;
 import nullblade.createelectricalstonks.blocks.energyrelayingpole.EnergyRelayingPoleEntity;
@@ -71,16 +72,19 @@ public class CreateElectricStonks {
 
         CraftingItems.init();
         ModBlocks.init();
-        GenerationBlocksRegistry.init();
         Create.registrate().addToSection(GENERATOR, AllSections.KINETICS);
         Create.registrate().addToSection(MOTOR, AllSections.KINETICS);
         Create.registrate().addToSection(CONVERTER, AllSections.KINETICS);
 
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientSetup);
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::generalSetup);
 
 //        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ConfigLoader.SPEC);
     }
 
+    private void generalSetup(final FMLCommonSetupEvent event) {
+        GenerationBlocksRegistry.init();
+    }
 
     private void clientSetup(final FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
