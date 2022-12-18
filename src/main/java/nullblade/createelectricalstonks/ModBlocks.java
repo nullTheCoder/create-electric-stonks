@@ -7,13 +7,12 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.material.MaterialColor;
 
-import static com.simibubi.create.AllTags.pickaxeOnly;
 import static com.simibubi.create.foundation.data.ModelGen.customItemModel;
 import static nullblade.createelectricalstonks.CreateElectricStonks.registrate;
 
 public class ModBlocks {
 
-    private static final CreateRegistrate TABBED_REGISTRATE = registrate.get().creativeModeTab(() -> StonksTab.MAIN);
+    private static final CreateRegistrate TABBED_REGISTRATE = registrate.creativeModeTab(() -> StonksTab.MAIN);
 
 
     public static BlockEntry<RotatedPillarBlock> RESONANCE_COIL_BLOCK;
@@ -23,7 +22,7 @@ public class ModBlocks {
         RESONANCE_COIL_BLOCK = TABBED_REGISTRATE.block("resonance_coil_block", RotatedPillarBlock::new)
                 .initialProperties(SharedProperties::copperMetal)
                 .properties(p -> p.color(MaterialColor.METAL))
-                .transform(pickaxeOnly())
+
                 .item()
                 .transform(customItemModel())
                 .register();
@@ -31,7 +30,6 @@ public class ModBlocks {
         RESONATING_BLOCK = TABBED_REGISTRATE.block("resonating_block", Block::new)
                 .initialProperties(SharedProperties::copperMetal)
                 .properties(p -> p.color(MaterialColor.METAL))
-                .transform(pickaxeOnly())
                 .item()
                 .transform(customItemModel())
                 .register();

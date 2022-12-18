@@ -7,7 +7,7 @@ import static nullblade.createelectricalstonks.CreateElectricStonks.registrate;
 
 public class CraftingItems {
 
-    private static final CreateRegistrate TABBED_REGISTRATE = registrate.get().creativeModeTab(() -> StonksTab.MAIN);
+    private static final CreateRegistrate TABBED_REGISTRATE = registrate.creativeModeTab(() -> StonksTab.MAIN);
 
     public static void init() {
         TABBED_REGISTRATE.item("redstone_resonance_coil", Item::new)
