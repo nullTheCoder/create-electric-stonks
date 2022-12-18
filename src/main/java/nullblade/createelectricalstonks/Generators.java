@@ -15,22 +15,20 @@ import nullblade.createelectricalstonks.blocks.reinforcedgenerator.ReinforcedGen
 import nullblade.createelectricalstonks.blocks.weakgenerator.WeakGeneratorBlock;
 import nullblade.createelectricalstonks.blocks.weakgenerator.WeakGeneratorEntity;
 
-import static com.simibubi.create.AllTags.pickaxeOnly;
 import static com.simibubi.create.foundation.data.ModelGen.customItemModel;
 import static nullblade.createelectricalstonks.CreateElectricStonks.registrate;
 
 public class Generators {
 
-    private static final CreateRegistrate TABBED_REGISTRATE = registrate.get().creativeModeTab(() -> StonksTab.MAIN);
+    private static final CreateRegistrate TABBED_REGISTRATE = registrate.creativeModeTab(() -> StonksTab.MAIN);
     public static final BlockEntry<GeneratorBlock> GENERATOR = TABBED_REGISTRATE.block("generator", GeneratorBlock::new)
             .initialProperties(SharedProperties::stone)
             .properties(p -> p.color(MaterialColor.METAL))
             .transform(BlockStressDefaults.setNoImpact())
-            .transform(pickaxeOnly())
             .item()
             .transform(customItemModel())
             .register();
-    public static final BlockEntityEntry<GeneratorEntity> GENERATOR_ENTITY = registrate.get()
+    public static final BlockEntityEntry<GeneratorEntity> GENERATOR_ENTITY = registrate
             .tileEntity("generator", GeneratorEntity::new)
             .instance(() -> ShaftInstance::new)
             .validBlock(GENERATOR)
@@ -41,11 +39,10 @@ public class Generators {
             .initialProperties(SharedProperties::stone)
             .properties(p -> p.color(MaterialColor.METAL))
             .transform(BlockStressDefaults.setNoImpact())
-            .transform(pickaxeOnly())
             .item()
             .transform(customItemModel())
             .register();
-    public static final BlockEntityEntry<WeakGeneratorEntity> WEAK_GENERATOR_ENTITY = registrate.get()
+    public static final BlockEntityEntry<WeakGeneratorEntity> WEAK_GENERATOR_ENTITY = registrate
             .tileEntity("weak_generator", WeakGeneratorEntity::new)
             .instance(() -> ShaftInstance::new)
             .validBlock(WEAK_GENERATOR)
@@ -57,11 +54,10 @@ public class Generators {
             .initialProperties(SharedProperties::stone)
             .properties(p -> p.color(MaterialColor.METAL))
             .transform(BlockStressDefaults.setNoImpact())
-            .transform(pickaxeOnly())
             .item()
             .transform(customItemModel())
             .register();
-    public static final BlockEntityEntry<ReinforcedGeneratorEntity> REINFORCED_GENERATOR_ENTITY = registrate.get()
+    public static final BlockEntityEntry<ReinforcedGeneratorEntity> REINFORCED_GENERATOR_ENTITY = registrate
             .tileEntity("reinforced_generator", ReinforcedGeneratorEntity::new)
             .instance(() -> ShaftInstance::new)
             .validBlock(REINFORCED_GENERATOR)
