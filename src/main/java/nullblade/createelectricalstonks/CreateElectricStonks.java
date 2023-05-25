@@ -1,10 +1,8 @@
 package nullblade.createelectricalstonks;
 
-import com.simibubi.create.Create;
-import com.simibubi.create.content.AllSections;
-import com.simibubi.create.content.contraptions.relays.encased.ShaftInstance;
-import com.simibubi.create.content.contraptions.relays.encased.ShaftRenderer;
-import com.simibubi.create.foundation.block.BlockStressDefaults;
+import com.simibubi.create.content.kinetics.BlockStressDefaults;
+import com.simibubi.create.content.kinetics.base.ShaftInstance;
+import com.simibubi.create.content.kinetics.base.ShaftRenderer;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.data.SharedProperties;
 import com.simibubi.create.foundation.ponder.PonderRegistrationHelper;
@@ -22,6 +20,8 @@ import nullblade.createelectricalstonks.blocks.energyrelayingpole.EnergyRelaying
 import nullblade.createelectricalstonks.blocks.fieldconverter.ConverterBlock;
 import nullblade.createelectricalstonks.blocks.fieldconverter.ConverterEntity;
 
+import java.util.Objects;
+
 import static com.simibubi.create.foundation.data.ModelGen.customItemModel;
 import static nullblade.createelectricalstonks.Generators.*;
 import static nullblade.createelectricalstonks.Motors.*;
@@ -35,13 +35,12 @@ public class CreateElectricStonks {
 
     public static final BlockEntry<ConverterBlock> CONVERTER = TABBED_REGISTRATE.block("converter", ConverterBlock::new)
             .initialProperties(SharedProperties::stone)
-            .properties(p -> p.color(MaterialColor.METAL))
             .transform(BlockStressDefaults.setNoImpact())
             .item()
             .transform(customItemModel())
             .register();
     public static final BlockEntityEntry<ConverterEntity> CONVERTER_ENTITY = registrate
-            .tileEntity("converter", ConverterEntity::new)
+            .blockEntity("converter", ConverterEntity::new)
             .instance(() -> ShaftInstance::new)
             .validBlock(CONVERTER)
             .renderer(() -> ShaftRenderer::new)
@@ -55,7 +54,7 @@ public class CreateElectricStonks {
             .transform(customItemModel())
             .register();
     public static final BlockEntityEntry<EnergyRelayingPoleEntity> ENERGY_RELAYING_POLE_ENTITY = registrate
-            .tileEntity("energy_relaying_pole", EnergyRelayingPoleEntity::new)
+            .blockEntity("energy_relaying_pole", EnergyRelayingPoleEntity::new)
             .validBlock(ENERGY_RELAYING_POLE)
             .register();
 
@@ -68,12 +67,21 @@ public class CreateElectricStonks {
         ModBlocks.init();
         registrate.registerEventListeners(FMLJavaModLoadingContext.get()
                 .getModEventBus());
-        Create.REGISTRATE.addToSection(GENERATOR, AllSections.KINETICS);
-        Create.REGISTRATE.addToSection(MOTOR, AllSections.KINETICS);
-        Create.REGISTRATE.addToSection(CONVERTER, AllSections.KINETICS);
 
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientSetup);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::generalSetup);
+
+        // I have no idea anymore
+
+        Objects.requireNonNull(WEAK_GENERATOR);
+        Objects.requireNonNull(GENERATOR);
+        Objects.requireNonNull(REINFORCED_GENERATOR);
+
+        Objects.requireNonNull(MOTOR);
+        Objects.requireNonNull(HEAVY_MOTOR);
+        Objects.requireNonNull(REINFORCED_MOTOR);
+        Objects.requireNonNull(SWIFT_MOTOR);
+        Objects.requireNonNull(WEAK_MOTOR);
 
 //        ModLoadingContext.registerConfig(ModConfig.Type.COMMON, ConfigLoader.SPEC);
     }
@@ -85,19 +93,19 @@ public class CreateElectricStonks {
 
     private void clientSetup(final FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
-            HELPER.addStoryBoard(ENERGY_RELAYING_POLE, "energy_relaying_pole", Ponder::energyRelayingPole, PonderTag.DECORATION);
+            HELPER.addStoryBoard(ENERGY_RELAYING_POLE, "energy_relaying_pole", Ponder::energyRelayingPole);
 
-            HELPER.addStoryBoard(MOTOR, "motor", Ponder::motor, PonderTag.KINETIC_SOURCES);
-            HELPER.addStoryBoard(WEAK_MOTOR, "motor", Ponder::motor, PonderTag.KINETIC_SOURCES);
-            HELPER.addStoryBoard(REINFORCED_MOTOR, "motor", Ponder::motor, PonderTag.KINETIC_SOURCES);
-            HELPER.addStoryBoard(HEAVY_MOTOR, "motor", Ponder::motor, PonderTag.KINETIC_SOURCES);
-            HELPER.addStoryBoard(REINFORCED_HEAVY_MOTOR, "motor", Ponder::motor, PonderTag.KINETIC_SOURCES);
-            HELPER.addStoryBoard(SWIFT_MOTOR, "motor", Ponder::motor, PonderTag.KINETIC_SOURCES);
+            HELPER.addStoryBoard(MOTOR, "motor", Ponder::motor);
+            HELPER.addStoryBoard(WEAK_MOTOR, "motor", Ponder::motor);
+            HELPER.addStoryBoard(REINFORCED_MOTOR, "motor", Ponder::motor);
+            HELPER.addStoryBoard(HEAVY_MOTOR, "motor", Ponder::motor);
+            HELPER.addStoryBoard(REINFORCED_HEAVY_MOTOR, "motor", Ponder::motor);
+            HELPER.addStoryBoard(SWIFT_MOTOR, "motor", Ponder::motor);
 
-            HELPER.addStoryBoard(CONVERTER, "generating_electricity", Ponder::generatingElectricity, PonderTag.KINETIC_APPLIANCES);
-            HELPER.addStoryBoard(GENERATOR, "generating_electricity", Ponder::generatingElectricity, PonderTag.KINETIC_APPLIANCES);
-            HELPER.addStoryBoard(WEAK_GENERATOR, "generating_electricity", Ponder::generatingElectricity, PonderTag.KINETIC_APPLIANCES);
-            HELPER.addStoryBoard(REINFORCED_GENERATOR, "generating_electricity", Ponder::generatingElectricity, PonderTag.KINETIC_APPLIANCES);
+            HELPER.addStoryBoard(CONVERTER, "generating_electricity", Ponder::generatingElectricity);
+            HELPER.addStoryBoard(GENERATOR, "generating_electricity", Ponder::generatingElectricity);
+            HELPER.addStoryBoard(WEAK_GENERATOR, "generating_electricity", Ponder::generatingElectricity);
+            HELPER.addStoryBoard(REINFORCED_GENERATOR, "generating_electricity", Ponder::generatingElectricity);
         });
     }
 

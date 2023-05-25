@@ -1,8 +1,9 @@
 package nullblade.createelectricalstonks.blocks.fieldconverter;
 
-import com.simibubi.create.content.contraptions.base.DirectionalKineticBlock;
-import com.simibubi.create.content.contraptions.base.IRotate;
-import com.simibubi.create.foundation.block.ITE;
+
+import com.simibubi.create.content.kinetics.base.DirectionalKineticBlock;
+import com.simibubi.create.content.kinetics.base.IRotate;
+import com.simibubi.create.foundation.block.IBE;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.BlockGetter;
@@ -16,7 +17,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import nullblade.createelectricalstonks.CreateElectricStonks;
 
-public class ConverterBlock extends DirectionalKineticBlock implements ITE<ConverterEntity>, IRotate {
+public class ConverterBlock extends DirectionalKineticBlock implements IBE<ConverterEntity>, IRotate {
 
     protected static final VoxelShape Y_AXIS_AABB = Block.box(2.0, 0.0, 2.0, 14.0, 16.0, 14.0);
     protected static final VoxelShape Z_AXIS_AABB = Block.box(2.0, 2.0, 0.0, 14.0, 14.0, 16.0);
@@ -45,12 +46,12 @@ public class ConverterBlock extends DirectionalKineticBlock implements ITE<Conve
 
 
     @Override
-    public Class<ConverterEntity> getTileEntityClass() {
+    public Class<ConverterEntity> getBlockEntityClass() {
         return ConverterEntity.class;
     }
 
     @Override
-    public BlockEntityType<? extends ConverterEntity> getTileEntityType() {
+    public BlockEntityType<? extends ConverterEntity> getBlockEntityType() {
         return CreateElectricStonks.CONVERTER_ENTITY.get();
     }
 

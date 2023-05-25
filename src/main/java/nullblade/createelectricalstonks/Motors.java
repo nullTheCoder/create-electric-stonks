@@ -1,7 +1,6 @@
 package nullblade.createelectricalstonks;
 
-import com.simibubi.create.content.contraptions.base.HalfShaftInstance;
-import com.simibubi.create.content.contraptions.components.motor.CreativeMotorRenderer;
+import com.simibubi.create.content.kinetics.base.HalfShaftInstance;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.data.SharedProperties;
 import com.tterrag.registrate.util.entry.BlockEntityEntry;
@@ -33,10 +32,10 @@ public class Motors {
             .transform(customItemModel())
             .register();
     public static final BlockEntityEntry<MotorEntity> MOTOR_ENTITY = registrate
-            .tileEntity("motor", MotorEntity::new)
+            .blockEntity("motor", MotorEntity::new)
             .instance(() -> HalfShaftInstance::new)
             .validBlock(MOTOR)
-            .renderer(() -> CreativeMotorRenderer::new)
+            .renderer(() -> HalfShaftRendererThing::new)
             .register();
 
     public static final BlockEntry<WeakMotorBlock> WEAK_MOTOR = TABBED_REGISTRATE.block("weak_motor", WeakMotorBlock::new)
@@ -46,10 +45,10 @@ public class Motors {
             .transform(customItemModel())
             .register();
     public static final BlockEntityEntry<WeakMotorEntity> WEAK_MOTOR_ENTITY = registrate
-            .tileEntity("weak_motor", WeakMotorEntity::new)
+            .blockEntity("weak_motor", WeakMotorEntity::new)
             .instance(() -> HalfShaftInstance::new)
             .validBlock(WEAK_MOTOR)
-            .renderer(() -> CreativeMotorRenderer::new)
+            .renderer(() ->  HalfShaftRendererThing::new)
             .register();
 
 
@@ -60,10 +59,10 @@ public class Motors {
             .transform(customItemModel())
             .register();
     public static final BlockEntityEntry<ReinforcedMotorEntity> REINFORCED_MOTOR_ENTITY = registrate
-            .tileEntity("reinforced_motor", ReinforcedMotorEntity::new)
+            .blockEntity("reinforced_motor", ReinforcedMotorEntity::new)
             .instance(() -> HalfShaftInstance::new)
             .validBlock(REINFORCED_MOTOR)
-            .renderer(() -> CreativeMotorRenderer::new)
+            .renderer(() ->  HalfShaftRendererThing::new)
             .register();
 
 
@@ -74,10 +73,10 @@ public class Motors {
             .transform(customItemModel())
             .register();
     public static final BlockEntityEntry<HeavyMotorEntity> HEAVY_MOTOR_ENTITY = registrate
-            .tileEntity("heavy_motor", HeavyMotorEntity::new)
+            .blockEntity("heavy_motor", HeavyMotorEntity::new)
             .instance(() -> HalfShaftInstance::new)
             .validBlock(HEAVY_MOTOR)
-            .renderer(() -> CreativeMotorRenderer::new)
+            .renderer(() ->  HalfShaftRendererThing::new)
             .register();
 
 
@@ -88,10 +87,10 @@ public class Motors {
             .transform(customItemModel())
             .register();
     public static final BlockEntityEntry<ReinforcedHeavyMotorEntity> REINFORCED_HEAVY_MOTOR_ENTITY = registrate
-            .tileEntity("reinforced_heavy_motor", ReinforcedHeavyMotorEntity::new)
+            .blockEntity("reinforced_heavy_motor", ReinforcedHeavyMotorEntity::new)
             .instance(() -> HalfShaftInstance::new)
             .validBlock(REINFORCED_HEAVY_MOTOR)
-            .renderer(() -> CreativeMotorRenderer::new)
+            .renderer(() ->  HalfShaftRendererThing::new)
             .register();
 
 
@@ -102,10 +101,10 @@ public class Motors {
             .transform(customItemModel())
             .register();
     public static final BlockEntityEntry<SwiftMotorEntity> SWIFT_MOTOR_ENTITY = registrate
-            .tileEntity("swift_motor", SwiftMotorEntity::new)
+            .blockEntity("swift_motor", SwiftMotorEntity::new)
             .instance(() -> HalfShaftInstance::new)
             .validBlock(SWIFT_MOTOR)
-            .renderer(() -> CreativeMotorRenderer::new)
+            .renderer(() ->  HalfShaftRendererThing::new)
             .register();
 
 }

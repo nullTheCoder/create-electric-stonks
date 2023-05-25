@@ -1,6 +1,6 @@
 package nullblade.createelectricalstonks.blocks.generator;
 
-import com.simibubi.create.content.contraptions.base.KineticTileEntity;
+import com.simibubi.create.content.kinetics.base.KineticBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
@@ -12,7 +12,7 @@ import nullblade.createelectricalstonks.GenerationBlocksRegistry;
 
 import java.util.List;
 
-public class GeneratorEntity extends KineticTileEntity {
+public class GeneratorEntity extends KineticBlockEntity {
 
     public int generated = 0;
     public float efficiency = 0;

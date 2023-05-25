@@ -1,9 +1,9 @@
 package nullblade.createelectricalstonks.blocks.motor;
 
-import com.simibubi.create.content.contraptions.base.GeneratingKineticTileEntity;
-import com.simibubi.create.foundation.tileEntity.TileEntityBehaviour;
-import com.simibubi.create.foundation.tileEntity.behaviour.CenteredSideValueBoxTransform;
-import com.simibubi.create.foundation.tileEntity.behaviour.scrollvalue.ScrollValueBehaviour;
+import com.simibubi.create.content.kinetics.base.GeneratingKineticBlockEntity;
+import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
+import com.simibubi.create.foundation.blockEntity.behaviour.CenteredSideValueBoxTransform;
+import com.simibubi.create.foundation.blockEntity.behaviour.scrollValue.ScrollValueBehaviour;
 import com.simibubi.create.foundation.utility.Lang;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -21,7 +21,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class MotorEntity extends GeneratingKineticTileEntity {
+public class MotorEntity extends GeneratingKineticBlockEntity {
 
     public boolean needsPower = false;
     public EnergyStorage energyStorage;
@@ -47,7 +47,7 @@ public class MotorEntity extends GeneratingKineticTileEntity {
     }
 
     @Override
-    public void addBehaviours(List<TileEntityBehaviour> behaviours) {
+    public void addBehaviours(List<BlockEntityBehaviour> behaviours) {
 
         CenteredSideValueBoxTransform slot =
                 new CenteredSideValueBoxTransform((motor, side) -> motor.getValue(MotorBlock.FACING) == side.getOpposite());
@@ -55,9 +55,7 @@ public class MotorEntity extends GeneratingKineticTileEntity {
         speedBehavior = new ScrollValueBehaviour(Lang.translateDirect("generic.speed"), this, slot);
         speedBehavior.between(-maxSpeed(), maxSpeed());
         speedBehavior.value = getDefaultSpeed();
-        speedBehavior.withUnit(i -> Lang.translateDirect("generic.unit.rpm"));
         speedBehavior.withCallback(this::updateSpeed);
-        speedBehavior.withStepFunction(this::stepUpdate);
         behaviours.add(speedBehavior);
     }
 
@@ -153,10 +151,10 @@ public class MotorEntity extends GeneratingKineticTileEntity {
     public void tick() {
         super.tick();
 
-        int needed = (int) (Math.abs(speedBehavior.scrollableValue) * (stressImpact()) * Config.fEPerRotation);
+        int needed = (int) (Math.abs(speedBehavior.value) * (stressImpact()) * Config.fEPerRotation);
         if (!level.isClientSide()) {
             int e = powered == needsPower ? energyStorage.extractEnergy(needed, false) : 0;
-            actualSpeed = Math.floorDiv(e, (int) (stressImpact() * Config.fEPerRotation)) * (speedBehavior.scrollableValue > 0 ? 1 : -1);
+            actualSpeed = Math.floorDiv(e, (int) (stressImpact() * Config.fEPerRotation)) * (speedBehavior.value > 0 ? 1 : -1);
             if (actualSpeed != speed) {
                 updateGeneratedRotation();
                 speed = actualSpeed;

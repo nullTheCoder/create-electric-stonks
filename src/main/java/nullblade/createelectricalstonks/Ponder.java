@@ -43,7 +43,7 @@ public class Ponder {
                 .pointAt(util.vector.of(2.5, 3.2, 2.5));
 
         Vec3 pos = util.vector.of(2.85, 2.5, 2.5);
-        scene.overlay.chaseBoundingBoxOutline(PonderPalette.WHITE, pos, new AABB(pos, pos).inflate(0.08), 60);
+        scene.overlay.chaseBoundingBoxOutline(PonderPalette.BLUE, pos, new AABB(pos, pos).inflate(0.08), 60);
         scene.overlay.showControls(new InputWindowElement(util.vector.of(2.85, 2.5, 2.5), Pointing.DOWN).scroll(), 60);
 
         scene.idle(50);

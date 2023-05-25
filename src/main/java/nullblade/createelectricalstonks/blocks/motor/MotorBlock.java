@@ -1,6 +1,6 @@
 package nullblade.createelectricalstonks.blocks.motor;
 
-import com.simibubi.create.foundation.block.ITE;
+import com.simibubi.create.foundation.block.IBE;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -11,9 +11,9 @@ import nullblade.createelectricalstonks.MotorBaseBlock;
 
 import static nullblade.createelectricalstonks.Motors.MOTOR_ENTITY;
 
-public class MotorBlock extends MotorBaseBlock implements ITE<MotorEntity> {
+public class MotorBlock extends MotorBaseBlock implements IBE<MotorEntity> {
     public MotorBlock(Properties arg) {
-        super(arg.noOcclusion());
+        super(arg);
     }
 
     @Override
@@ -28,12 +28,12 @@ public class MotorBlock extends MotorBaseBlock implements ITE<MotorEntity> {
     }
 
     @Override
-    public Class<MotorEntity> getTileEntityClass() {
+    public Class<MotorEntity> getBlockEntityClass() {
         return MotorEntity.class;
     }
 
     @Override
-    public BlockEntityType<? extends MotorEntity> getTileEntityType() {
+    public BlockEntityType<? extends MotorEntity> getBlockEntityType() {
         return MOTOR_ENTITY.get();
     }
 }
