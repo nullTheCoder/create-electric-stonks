@@ -1,6 +1,6 @@
 package nullblade.createelectricalstonks.blocks.energyrelayingpole;
 
-import com.simibubi.create.foundation.block.ITE;
+import com.simibubi.create.foundation.block.IBE;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -13,7 +13,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import nullblade.createelectricalstonks.Config;
 import nullblade.createelectricalstonks.CreateElectricStonks;
 
-public class EnergyRelayingPoleBlock extends RodBlock implements ITE<EnergyRelayingPoleEntity> {
+public class EnergyRelayingPoleBlock extends RodBlock implements IBE<EnergyRelayingPoleEntity> {
 
     public EnergyRelayingPoleBlock(Properties arg) {
         super(arg);
@@ -42,12 +42,12 @@ public class EnergyRelayingPoleBlock extends RodBlock implements ITE<EnergyRelay
 
 
     @Override
-    public Class<EnergyRelayingPoleEntity> getTileEntityClass() {
+    public Class<EnergyRelayingPoleEntity> getBlockEntityClass() {
         return EnergyRelayingPoleEntity.class;
     }
 
     @Override
-    public BlockEntityType<? extends EnergyRelayingPoleEntity> getTileEntityType() {
+    public BlockEntityType<? extends EnergyRelayingPoleEntity> getBlockEntityType() {
         return CreateElectricStonks.ENERGY_RELAYING_POLE_ENTITY.get();
     }
 

@@ -1,8 +1,8 @@
 package nullblade.createelectricalstonks;
 
-import com.simibubi.create.content.contraptions.relays.encased.ShaftInstance;
-import com.simibubi.create.content.contraptions.relays.encased.ShaftRenderer;
-import com.simibubi.create.foundation.block.BlockStressDefaults;
+import com.simibubi.create.content.kinetics.BlockStressDefaults;
+import com.simibubi.create.content.kinetics.base.ShaftInstance;
+import com.simibubi.create.content.kinetics.base.ShaftRenderer;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.data.SharedProperties;
 import com.tterrag.registrate.util.entry.BlockEntityEntry;
@@ -29,7 +29,7 @@ public class Generators {
             .transform(customItemModel())
             .register();
     public static final BlockEntityEntry<GeneratorEntity> GENERATOR_ENTITY = registrate
-            .tileEntity("generator", GeneratorEntity::new)
+            .blockEntity("generator", GeneratorEntity::new)
             .instance(() -> ShaftInstance::new)
             .validBlock(GENERATOR)
             .renderer(() -> ShaftRenderer::new)
@@ -43,7 +43,7 @@ public class Generators {
             .transform(customItemModel())
             .register();
     public static final BlockEntityEntry<WeakGeneratorEntity> WEAK_GENERATOR_ENTITY = registrate
-            .tileEntity("weak_generator", WeakGeneratorEntity::new)
+            .blockEntity("weak_generator", WeakGeneratorEntity::new)
             .instance(() -> ShaftInstance::new)
             .validBlock(WEAK_GENERATOR)
             .renderer(() -> ShaftRenderer::new)
@@ -58,7 +58,7 @@ public class Generators {
             .transform(customItemModel())
             .register();
     public static final BlockEntityEntry<ReinforcedGeneratorEntity> REINFORCED_GENERATOR_ENTITY = registrate
-            .tileEntity("reinforced_generator", ReinforcedGeneratorEntity::new)
+            .blockEntity("reinforced_generator", ReinforcedGeneratorEntity::new)
             .instance(() -> ShaftInstance::new)
             .validBlock(REINFORCED_GENERATOR)
             .renderer(() -> ShaftRenderer::new)

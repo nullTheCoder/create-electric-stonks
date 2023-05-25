@@ -1,6 +1,6 @@
 package nullblade.createelectricalstonks.blocks.fieldconverter;
 
-import com.simibubi.create.content.contraptions.base.KineticTileEntity;
+import com.simibubi.create.content.kinetics.base.KineticBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class ConverterEntity extends KineticTileEntity {
+public class ConverterEntity extends KineticBlockEntity {
 
     public int generated = 0;
     private GeneratorEntity frontGenerator = null;

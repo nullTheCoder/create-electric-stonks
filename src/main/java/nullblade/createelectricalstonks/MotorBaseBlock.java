@@ -1,7 +1,8 @@
 package nullblade.createelectricalstonks;
 
-import com.simibubi.create.content.contraptions.base.DirectionalKineticBlock;
-import com.simibubi.create.content.contraptions.base.IRotate;
+
+import com.simibubi.create.content.kinetics.base.DirectionalKineticBlock;
+import com.simibubi.create.content.kinetics.base.IRotate;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -40,7 +41,7 @@ public class MotorBaseBlock extends DirectionalKineticBlock implements IRotate {
         if (arg3.hasBlockEntity()) {
             BlockEntity entity = arg.getBlockEntity(arg2);
             if (entity instanceof MotorEntity en) {
-                en.speedBehavior.scrollableValue = 0;
+                en.speedBehavior.value = 0;
                 en.es.invalidate();
                 en.updateGeneratedRotation();
             }

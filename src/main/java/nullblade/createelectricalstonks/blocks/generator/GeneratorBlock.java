@@ -1,8 +1,9 @@
 package nullblade.createelectricalstonks.blocks.generator;
 
-import com.simibubi.create.content.contraptions.base.DirectionalKineticBlock;
-import com.simibubi.create.content.contraptions.base.IRotate;
-import com.simibubi.create.foundation.block.ITE;
+
+import com.simibubi.create.content.kinetics.base.DirectionalKineticBlock;
+import com.simibubi.create.content.kinetics.base.IRotate;
+import com.simibubi.create.foundation.block.IBE;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.BlockGetter;
@@ -15,7 +16,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 import static nullblade.createelectricalstonks.Generators.GENERATOR_ENTITY;
 
-public class GeneratorBlock extends DirectionalKineticBlock implements ITE<GeneratorEntity>, IRotate {
+public class GeneratorBlock extends DirectionalKineticBlock implements IBE<GeneratorEntity>, IRotate {
 
     protected static final VoxelShape Y_AXIS_AABB = Block.box(2.0, 0.0, 2.0, 14.0, 16.0, 14.0);
     protected static final VoxelShape Z_AXIS_AABB = Block.box(2.0, 2.0, 0.0, 14.0, 14.0, 16.0);
@@ -46,12 +47,12 @@ public class GeneratorBlock extends DirectionalKineticBlock implements ITE<Gener
 
 
     @Override
-    public Class<GeneratorEntity> getTileEntityClass() {
+    public Class<GeneratorEntity> getBlockEntityClass() {
         return GeneratorEntity.class;
     }
 
     @Override
-    public BlockEntityType<? extends GeneratorEntity> getTileEntityType() {
+    public BlockEntityType<? extends GeneratorEntity> getBlockEntityType() {
         return GENERATOR_ENTITY.get();
     }
 
