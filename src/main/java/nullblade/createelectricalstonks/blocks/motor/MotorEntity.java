@@ -154,7 +154,7 @@ public class MotorEntity extends GeneratingKineticBlockEntity {
         int needed = (int) (Math.abs(speedBehavior.value) * (stressImpact()) * Config.fEPerRotation);
         if (!level.isClientSide()) {
             int e = powered == needsPower ? energyStorage.extractEnergy(needed, false) : 0;
-            actualSpeed = Math.floorDiv(e, (int) (stressImpact() * Config.fEPerRotation)) * (speedBehavior.value > 0 ? 1 : -1);
+            actualSpeed = (int) Math.floor(e / ((stressImpact() * Config.fEPerRotation)) * (speedBehavior.value > 0 ? 1 : -1));
             if (actualSpeed != speed) {
                 updateGeneratedRotation();
                 speed = actualSpeed;

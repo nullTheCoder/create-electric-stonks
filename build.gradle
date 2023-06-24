@@ -95,7 +95,7 @@ dependencies {
     modImplementation("com.tterrag.registrate:Registrate:${registrate_version}")
     modImplementation("curse.maven:lazydfu-460819:3544496")
 
-    modCompileOnly('com.blamejared.crafttweaker:CraftTweaker-forge-1.19.2:10.0.12')
+    modImplementation('com.blamejared.crafttweaker:CraftTweaker-forge-1.19.2:10.0.12')
 }
 
 processResources {
